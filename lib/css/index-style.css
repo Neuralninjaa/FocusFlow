@@ -1,3 +1,21 @@
+.logo {
+  font-family: "SUSE", sans-serif !important;
+  font-optical-sizing: auto !important;
+  font-weight: 48px !important;
+  font-style: normal !important;
+}
+
+.timer {
+    letter-spacing: 0.3em; /* İstenilen aralık miktarını buraya yazın */
+    
+}
+
+*{
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
 body {
     background-color: black;
     color: white;
@@ -8,7 +26,7 @@ body {
 }
 
 .logo {
-    font-size: 4rem; /* Logo boyutunu büyüt */
+    font-size: 4rem;
     margin: 20px 0;
     color: gray;
     font-weight: bold;
@@ -21,12 +39,16 @@ body {
 }
 
 .timer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Timer'ı ekranın ortasında tutacak şekilde ayarlayın */
     margin-bottom: 20px;
 }
 
 .timer {
-    font-size: 15rem; /* Zamanlayıcı boyutunu büyüt */
-    margin: 20px 0;
+    font-size: 15rem;
     color: gray;
 }
 
@@ -50,6 +72,7 @@ body {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    margin: 0 5px; /* Araya boşluk ekleyin */
 }
 
 .mode-button:hover {
@@ -65,7 +88,7 @@ body {
 
 .controls {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .start-button, .stop-button, .reset-button {
@@ -86,25 +109,126 @@ body {
 }
 
 .start-button:hover {
-    background-color: #23c483;
-    box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
+    background-color: #4CAF50;
     color: #fff;
     transform: translateY(-3px);
-    background-color: #4CAF50; /* Başlat butonu için arka plan rengi */
 }
 
 .stop-button:hover {
     background-color: #f44336;
-    box-shadow: 0px 5px 10px #f44336;
     color: #fff;
     transform: translateY(-3px);
-    background-color: #f44336; /* Stop butonu için arka plan rengi */
 }
 
 .reset-button:hover {
     background-color: #2196F3;
-    box-shadow: 0px 5px 10px #2196F3;
     color: #fff;
     transform: translateY(-3px);
-    background-color: #2196F3; /* Stop butonu için arka plan rengi */
+}
+
+.fullscreen-button, .exit-fullscreen-button {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: gray;
+    background-color: black;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    bottom: 20px;
+}
+
+.fullscreen-button {
+    right: 60px;
+}
+
+.exit-fullscreen-button {
+    right: 20px;
+    display: none; /* Başlangıçta gizli */
+    font-size: 4rem;
+}
+
+.fullscreen-button:hover, .exit-fullscreen-button:hover {
+    font-size: 3rem;
+}
+
+.fullscreen-mode .logo {
+    display: none; /* Tam ekran modunda logo gizli */
+}
+
+.fullscreen-mode .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Tam ekran yüksekliği */
+    flex-direction: column;
+}
+
+.fullscreen-mode .timer-container {
+    margin: 0;
+}
+
+.fullscreen-mode .controls {
+    margin-top: 20px;
+}
+
+.fullscreen-mode .controls > button{
+    background-color: black;
+}
+
+.fullscreen-mode .buttons {
+    display: none; /* Tam ekran modunda mode-button'ları gizle */
+}
+
+.fullscreen-mode .fullscreen-button {
+    display: none; /* Tam ekran modunda tam ekran butonunu gizle */
+}
+
+.fullscreen-mode .exit-fullscreen-button {
+    display: block; /* Tam ekran modunda çıkış butonunu göster */
+    color: black;
+}
+
+.fullscreen-mode .exit-fullscreen-button:hover {
+    color: gray;
+}
+
+/* Tam ekran modunda .buttons'ı görünür yap */
+.fullscreen-mode .buttons {
+    display: flex; /* Butonları görünür yap */
+    justify-content: space-around; /* Butonları hizala */
+}
+
+.fullscreen-mode .buttons > button{
+    background-color: black;
+}
+
+.fullscreen-mode .buttons > button:hover{
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.fullscreen-mode .start-button:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.fullscreen-mode .stop-button:hover {
+    background-color: #f44336;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.fullscreen-mode .reset-button:hover {
+    background-color: #2196F3;
+    color: #fff;
+    transform: translateY(-3px);
 }
