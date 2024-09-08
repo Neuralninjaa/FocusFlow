@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px; /* Container genişliğini artırdım */
     margin: 0 auto;
     padding: 20px;
 }
@@ -47,48 +47,15 @@ body {
     display: flex;
     flex-wrap: wrap; /* Taşma durumunda satıra sarmayı sağlar */
     justify-content: center;
+    gap: 10px; /* Butonlar arasına boşluk ekler */
     margin-bottom: 20px;
 }
 
-.mode-button {
-    padding: 1.3em 3em;
-    font-size: 12px;
+.mode-button, .start-button, .stop-button, .reset-button {
+    padding: 1.5em 3em; /* Buton padding'ini artır */
+    font-size: 14px; /* Buton yazı boyutunu artır */
     text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: black;
-    background-color: gray;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    outline: none;
-    margin: 0 5px; /* Araya boşluk ekleyin */
-}
-
-.mode-button:hover {
-    background-color: #23c483;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-}
-
-.mode-button:active {
-    transform: translateY(-1px);
-}
-
-.controls {
-    display: flex;
-    flex-wrap: wrap; /* Taşma durumunda satıra sarmayı sağlar */
-    justify-content: center;
-}
-
-.start-button, .stop-button, .reset-button {
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 2px;
     font-weight: 500;
     color: #000;
     background-color: gray;
@@ -98,25 +65,25 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
     outline: none;
-    margin: 0 5px;
+}
+
+.mode-button:hover, .start-button:hover, .stop-button:hover, .reset-button:hover {
+    transform: translateY(-3px);
 }
 
 .start-button:hover {
     background-color: #4CAF50;
     color: #fff;
-    transform: translateY(-3px);
 }
 
 .stop-button:hover {
     background-color: #f44336;
     color: #fff;
-    transform: translateY(-3px);
 }
 
 .reset-button:hover {
     background-color: #2196F3;
     color: #fff;
-    transform: translateY(-3px);
 }
 
 .fullscreen-button, .exit-fullscreen-button {
@@ -190,8 +157,17 @@ body {
         font-size: 10rem; /* Orta büyüklükteki ekranlar için zamanlayıcı boyutunu küçült */
     }
 
+    .container {
+        max-width: 700px; /* Orta büyüklükteki ekranlar için container genişliğini azalt */
+    }
+
+    .buttons {
+        flex-direction: row; /* Butonları küçük ekranlarda dikey hizala */
+        gap: 10px; /* Butonlar arasına boşluk ekle */
+    }
+
     .mode-button, .start-button, .stop-button, .reset-button {
-        font-size: 10px; /* Orta büyüklükteki ekranlar için buton yazı boyutunu küçült */
+        font-size: 12px; /* Orta büyüklükteki ekranlar için buton yazı boyutunu küçült */
         padding: 1em 2em; /* Orta büyüklükteki ekranlar için buton padding'ini küçült */
     }
 }
@@ -205,8 +181,17 @@ body {
         font-size: 7rem; /* Daha küçük ekranlar için zamanlayıcı boyutunu küçült */
     }
 
+    .container {
+        max-width: 600px; /* Daha küçük ekranlar için container genişliğini azalt */
+    }
+
+    .buttons {
+        flex-direction: row; /* Daha küçük ekranlarda butonları dikey hizala */
+        gap: 8px; /* Butonlar arasına boşluk ekle */
+    }
+
     .mode-button, .start-button, .stop-button, .reset-button {
-        font-size: 9px; /* Daha küçük ekranlar için buton yazı boyutunu küçült */
+        font-size: 10px; /* Daha küçük ekranlar için buton yazı boyutunu küçült */
         padding: 0.8em 1.5em; /* Daha küçük ekranlar için buton padding'ini küçült */
     }
 }
@@ -218,6 +203,15 @@ body {
 
     .timer {
         font-size: 5rem; /* Daha küçük ekranlar için zamanlayıcı boyutunu daha da küçült */
+    }
+
+    .container {
+        max-width: 100%; /* En küçük ekranlar için container genişliğini tamamen kullan */
+    }
+
+    .buttons {
+        flex-direction: column; /* En küçük ekranlarda butonları dikey hizala */
+        gap: 6px; /* Butonlar arasına boşluk ekle */
     }
 
     .mode-button, .start-button, .stop-button, .reset-button {
