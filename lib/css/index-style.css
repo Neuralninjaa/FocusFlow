@@ -45,18 +45,48 @@ body {
     position: relative;
 }
 
+.set-settings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: gray;
+    border-radius: 45px;
+    padding: -5px 0px -5px 0px;
+    margin-left: 6vh;
+}
+
+/* input*/
+/* Dakika girilen input alanı */
+#minutesInput {
+    width: 150px; /* Genişlik */
+    height: 50px; /* Yükseklik */
+    font-size: 18px; /* Yazı tipi boyutu */
+    padding: 10px; /* İçerik ile kenarlar arasındaki boşluk */
+    border-radius: 45px; /* Kenarların yuvarlatılması */
+    background-color: gray; /* Arka plan rengi */
+    color:black; /* Yazı rengi */   
+    border: gray; 
+    text-align: center;
+}
+
+#minutesInput::placeholder {
+    color: rgb(54, 54, 54); /* Placeholder yazısının rengi */
+    padding-left: 10px;
+    text-align: center;
+}
+
+
 /* Butonlar */
 .buttons {
     display: flex;
-    flex-wrap: wrap; /* Taşma durumunda satıra sarmayı sağlar */
     justify-content: center;
+    align-items: center; /* Dikeyde ortala */
     gap: 10px; /* Butonlar arasına boşluk ekler */
 }
 
-.time-button, .start-button, .stop-button, .reset-button {
+.time-button, .start-button, .stop-button, .reset-button, .set-time-button {
     padding: 1.5em 3em; /* Buton padding'ini artır */
     font-size: 14px; /* Buton yazı boyutunu artır */
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
     color: #000;
@@ -68,6 +98,14 @@ body {
     cursor: pointer;
     outline: none;
     margin: 8px;
+}
+
+.set-time-button{
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.reset-button{
+    text-transform: uppercase;
 }
 
 .time-button:hover, .start-button:hover, .stop-button:hover, .reset-button:hover {
