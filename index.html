@@ -10,9 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="icon" href="./lib/favicon.ico.png" type="image/x-icon">
-
 </head>
 <body>
     <header>
@@ -22,11 +21,14 @@
     <div class="container">
         <div class="timer-container">
             <div class="buttons">
-                <button class="mode-button" data-mode="pomodoro">Pomodoro</button>
-                <button class="mode-button" data-mode="short-break">Short Break</button>
-                <button class="mode-button" data-mode="long-break">Long Break</button>
+                <button class="time-button" data-time="600">10m</button>
+                <button class="time-button" data-time="900">15m</button>
+                <button class="time-button" data-time="1800">30m</button>
+                <button class="time-button" data-time="2700">45m</button>
+                <button class="time-button" data-time="3600">60m</button>
+                <button class="time-button" data-time="5400">90m</button>
             </div>
-            <div class="timer">25:00</div>
+            <div class="timer">00:00</div>
             <div class="controls">
                 <button class="start-button"><i class="fa-solid fa-play"></i></button>
                 <button class="stop-button"><i class="fa-solid fa-stop"></i></button>

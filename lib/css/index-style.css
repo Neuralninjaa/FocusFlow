@@ -2,7 +2,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: "Bungee", sans-serif;
+    font-family: "Oswald", sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -17,13 +17,13 @@ body {
 }
 
 .timer {
-    font-family: "Bungee", sans-serif;
-    font-weight: 400;
-    font-size: 15rem;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 20rem;
     color: rgb(200, 200, 200);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.13em;
     text-align: center; 
-    padding-left: 10vh;
+    padding-left: 2vh;
 }
 
 .container {
@@ -51,10 +51,9 @@ body {
     flex-wrap: wrap; /* Taşma durumunda satıra sarmayı sağlar */
     justify-content: center;
     gap: 10px; /* Butonlar arasına boşluk ekler */
-    margin-bottom: 20px;
 }
 
-.mode-button, .start-button, .stop-button, .reset-button {
+.time-button, .start-button, .stop-button, .reset-button {
     padding: 1.5em 3em; /* Buton padding'ini artır */
     font-size: 14px; /* Buton yazı boyutunu artır */
     text-transform: uppercase;
@@ -68,30 +67,35 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
     outline: none;
+    margin: 8px;
 }
 
-.mode-button:hover, .start-button:hover, .stop-button:hover, .reset-button:hover {
-    transform: translateY(-3px);
+.time-button:hover, .start-button:hover, .stop-button:hover, .reset-button:hover {
+    transform:scale(1.1);
 }
 
-.mode-button:hover {
+.time-button:hover {
     background-color: #4c56af;
     color: #fff;
+    box-shadow: 0 0 15px #4c56af;
 }
 
 .start-button:hover {
     background-color: #4CAF50;
     color: #fff;
+    box-shadow: 0 0 15px #4CAF50;
 }
 
 .stop-button:hover {
     background-color: #f44336;
     color: #fff;
+    box-shadow: 0 0 15px #f44336;
 }
 
 .reset-button:hover {
     background-color: #2196F3;
     color: #fff;
+    box-shadow: 0 0 15px #2196F3;
 }
 
 .fullscreen-button, .exit-fullscreen-button {
