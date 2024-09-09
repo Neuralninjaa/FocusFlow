@@ -2,7 +2,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Bungee", sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -20,9 +20,9 @@ body {
     font-family: "Bungee", sans-serif;
     font-weight: 400;
     font-size: 15rem;
-    color: gray;
-    letter-spacing: 0.3em;
-    text-align: center;
+    color: rgb(200, 200, 200);
+    letter-spacing: 0.2em;
+    text-align: center; 
     padding-left: 10vh;
 }
 
@@ -74,6 +74,11 @@ body {
     transform: translateY(-3px);
 }
 
+.mode-button:hover {
+    background-color: #4c56af;
+    color: #fff;
+}
+
 .start-button:hover {
     background-color: #4CAF50;
     color: #fff;
@@ -107,7 +112,7 @@ body {
 }
 
 .fullscreen-button {
-    right: 60px;
+    right: 20px;
 }
 
 .exit-fullscreen-button {
@@ -134,7 +139,7 @@ body {
 
 .fullscreen-mode .controls, .fullscreen-mode .buttons, .fullscreen-mode .exit-fullscreen-button {
     opacity: 0; /* Butonları başlangıçta gizli yap */
-    transition: opacity 0.5s ease;
+    transition: opacity 1s ease;
 }
 
 .fullscreen-mode .controls.visible, .fullscreen-mode .buttons.visible, .fullscreen-mode .exit-fullscreen-button.visible {
