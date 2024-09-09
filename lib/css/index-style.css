@@ -30,6 +30,9 @@ body {
     max-width: 800px; /* Container genişliğini artırdım */
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ekran ortasında yatayda hizala */
 }
 
 .timer-container {
