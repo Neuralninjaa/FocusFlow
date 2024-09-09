@@ -71,7 +71,6 @@ body {
 
 #minutesInput::placeholder {
     color: rgb(54, 54, 54); /* Placeholder yazısının rengi */
-    padding-left: 10px;
     text-align: center;
 }
 
@@ -198,78 +197,187 @@ body {
 }
 
 /* Responsive Medya Sorguları */
-@media (max-width: 992px) {
+/*   ##Cihaz = Masaüstü    */
+@media (min-width: 1281px) {
     .logo {
-        font-size: 3rem; /* Orta büyüklükteki ekranlar için logo boyutunu küçült */
+        font-size: 5rem;
     }
-
+    
     .timer {
-        font-size: 10rem; /* Orta büyüklükteki ekranlar için zamanlayıcı boyutunu küçült */
+        font-size: 20rem;
     }
-
+    
     .container {
-        max-width: 700px; /* Orta büyüklükteki ekranlar için container genişliğini azalt */
-    }
-
-    .buttons {
-        flex-direction: row; /* Butonları küçük ekranlarda dikey hizala */
-        gap: 10px; /* Butonlar arasına boşluk ekle */
-    }
-
-    .mode-button, .start-button, .stop-button, .reset-button {
-        font-size: 12px; /* Orta büyüklükteki ekranlar için buton yazı boyutunu küçült */
-        padding: 1em 2em; /* Orta büyüklükteki ekranlar için buton padding'ini küçült */
+        max-width: 800px;
     }
 }
 
-@media (max-width: 768px) {
+/*  ##Cihaz = Laptoplar, Masaüstü    */
+@media (min-width: 1025px) and (max-width: 1280px) {
     .logo {
-        font-size: 2.5rem; /* Daha küçük ekranlar için logo boyutunu küçült */
+        font-size: 4rem;
     }
 
     .timer {
-        font-size: 7rem; /* Daha küçük ekranlar için zamanlayıcı boyutunu küçült */
+        font-size: 15rem;
     }
 
     .container {
-        max-width: 600px; /* Daha küçük ekranlar için container genişliğini azalt */
+        max-width: 700px;
     }
 
-    .buttons {
-        flex-direction: row; /* Daha küçük ekranlarda butonları dikey hizala */
-        gap: 8px; /* Butonlar arasına boşluk ekle */
+    .set-settings{
+        margin-left: 1px;
     }
 
-    .mode-button, .start-button, .stop-button, .reset-button {
-        font-size: 10px; /* Daha küçük ekranlar için buton yazı boyutunu küçült */
-        padding: 0.8em 1.5em; /* Daha küçük ekranlar için buton padding'ini küçült */
+    .time-button{
+        margin: 0.5px;
     }
 }
 
-@media (max-width: 480px) {
+/*  ##Cihaz = Tabletler, Ipad (portrait/dikey modda)  */
+@media (min-width: 768px) and (max-width: 1024px) {
     .logo {
-        font-size: 1.8rem; /* Daha küçük ekranlar için logo boyutunu daha da küçült */
+        font-size: 3rem;
     }
 
     .timer {
-        font-size: 5rem; /* Daha küçük ekranlar için zamanlayıcı boyutunu daha da küçült */
+        font-size: 10rem;
     }
 
     .container {
-        max-width: 100%; /* En küçük ekranlar için container genişliğini tamamen kullan */
+        max-width: 700px;
     }
 
     .buttons {
-        flex-direction: column; /* En küçük ekranlarda butonları dikey hizala */
-        gap: 6px; /* Butonlar arasına boşluk ekle */
+        flex-direction: row;
+        gap: 10px;
     }
 
-    .mode-button, .start-button, .stop-button, .reset-button {
-        font-size: 8px; /* Daha küçük ekranlar için buton yazı boyutunu küçült */
-        padding: 0.6em 1.2em; /* Daha küçük ekranlar için buton padding'ini daha da küçült */
+    .time-button, .start-button, .stop-button, .reset-button {
+        font-size: 12px;
+        padding: 1em 2em;
+    }
+
+    .set-time-button {
+        padding: 1vh;
+        margin: 2vh;
+    }
+
+    .set-settings{
+        height: 60%;
+        width: 30%;
+        margin-left: 1px;
+    }
+
+    .time-button{
+        margin: 0.5px;
+    }
+
+    #minutesInput {
+        width: 60%;
+        height: 70%; 
+        font-size: 12px; 
+        padding: 3px; 
+    }   
+}
+
+/*  ##Cihaz = Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Landscape / Yatay Modda)   */
+@media (min-width: 481px) and (max-width: 767px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .timer {
+        font-size: 7rem;
+    }
+
+    .container {
+        max-width: 600px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .time-button, .start-button, .stop-button, .reset-button {
+        font-size: 10px;
+        padding: 0.8em 1.5em;
+    }
+
+    .set-time-button {
+        padding: 0.5vh;
+        margin: 2vh;
+    }
+
+    .set-settings{
+        height: 50%;
+        width: 20%;
+        margin-left: 1px;
+    }
+
+    .time-button{
+        margin: 0.5px;
+    }
+
+    #minutesInput {
+        width: 60%;
+        height: 70%; 
+        font-size: 12px; 
+        padding: 3px; 
+    }   
+}
+
+/*   ##Cihaz = En Çok Tercih Edilen Mobil Boyutlar (Portrait/Dikey Modda)  */
+@media (min-width: 320px) and (max-width: 480px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .timer {
+        font-size: 5rem;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .time-button, .start-button, .stop-button, .reset-button {
+        font-size: 8px;
+        padding: 0.6em 1.2em;
     }
 
     .fullscreen-button, .exit-fullscreen-button {
-        font-size: 1.5rem; /* Daha küçük ekranlar için tam ekran ve çıkış butonlarının boyutunu küçült */
+        font-size: 1.5rem;
     }
+
+    .set-time-button {
+        padding: 0.5vh;
+        margin: 2vh;
+    }
+
+    .set-settings{
+        height: 50%;
+        width: 20%;
+        margin-left: 1px;
+    }
+
+    .time-button{
+        margin: 0.5px;
+    }
+
+    #minutesInput {
+        width: 60%;
+        height: 70%; 
+        font-size: 12px; 
+        padding: 3px; 
+    }  
 }
