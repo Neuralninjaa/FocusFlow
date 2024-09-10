@@ -17,9 +17,10 @@ body {
 }
 
 .timer {
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", sans-serif , monospace;
     font-weight: 700;
     font-size: 20rem;
+    font-feature-settings: 'tnum'; /* Tabular numbers, tüm sayıları eşit genişlikte gösterir */
     color: rgb(200, 200, 200);
     letter-spacing: 0.13em;
     text-align: center; 
