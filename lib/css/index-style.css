@@ -2,7 +2,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: "Oswald", sans-serif;
+    font-family: "SUSE", sans-serif ;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -17,14 +17,14 @@ body {
 }
 
 .timer {
-    font-family: "Oswald", sans-serif , monospace;
-    font-weight: 700;
+    font-family: "Reddit Mono", monospace;
+    font-weight: 500;
     font-size: 20rem;
-    font-feature-settings: 'tnum'; /* Tabular numbers, tüm sayıları eşit genişlikte gösterir */
     color: rgb(200, 200, 200);
-    letter-spacing: 0.13em;
+    letter-spacing: 0.08em;
     text-align: center; 
     padding-left: 2vh;
+    word-spacing: -12px;
 }
 
 .container {
@@ -83,6 +83,7 @@ body {
     align-items: center; /* Dikeyde ortala */
     gap: 10px; /* Butonlar arasına boşluk ekler */
 }
+
 
 .time-button, .start-button, .stop-button, .reset-button, .set-time-button {
     padding: 1.5em 3em; /* Buton padding'ini artır */
@@ -382,3 +383,4 @@ body {
         padding: 3px; 
     }  
 }
+
