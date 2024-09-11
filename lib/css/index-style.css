@@ -26,7 +26,8 @@ body {
     padding-left: 2vh;
     word-spacing: -12px;
     border-radius: 200px;
-    transition: background-color 0.5s, color 0.5s;
+    transition: all 2s ease-in-out;
+    /* background: radial-gradient(ellipse closest-side, rgb(200, 200, 200), gray,black);  */
 }
 
 .container {
@@ -377,30 +378,19 @@ body {
 }
 
 .timer.flash {
-    animation: flashBackground 2s; /* Animasyon süresi 3 saniye */
-    animation-iteration-count: 1; /* Animasyon bir kere çalışsın */
+    animation: flashBackground 5s forwards; /* Animasyon süresi 5 saniye, bir kez çalışır ve son durumu korur */
 }
 
-.timer.flash {
-    animation: flashBackground 3s;
-    animation-iteration-count: 1;
-}
-
-@keyframes flashBackground {
-    0% { 
-        background-color: #8000808c; 
-        color: #fff; 
-        box-shadow: 0 0 30px 10px #800080; /* Daha büyük ve yaygın gölge */
-    }  
-    50% { 
-        background-color: #8000808c; 
-        color: #fff; 
-        box-shadow: 0 0 40px 20px #80008080; /* Gölge yayılmaya devam eder ve şeffaflık artar */
-    }  
+@keyframes flashBackground {  
+    0% {   
+      background: radial-gradient(ellipse 55% 55%, rgb(83, 172, 138), black); /* İlk başta %60 genişlik ve yükseklik */
+      color: rgb(200, 200, 200);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  
     100% { 
-        background-color: #000; 
-        color: rgb(200, 200, 200); 
-        box-shadow: 0 0 0 0 #000; /* Gölge kaybolur */
+      background: radial-gradient(ellipse 100% 100%, black, black); /* %150 genişlik ve yükseklik */
+      color: rgb(200, 200, 200);
     }  
-}
+  }
 
