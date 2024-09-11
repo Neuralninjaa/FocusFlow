@@ -377,13 +377,30 @@ body {
 }
 
 .timer.flash {
-    animation: flashBackground 3s; /* Animasyon süresi 3 saniye */
+    animation: flashBackground 2s; /* Animasyon süresi 3 saniye */
+    animation-iteration-count: 1; /* Animasyon bir kere çalışsın */
+}
+
+.timer.flash {
+    animation: flashBackground 3s;
+    animation-iteration-count: 1;
 }
 
 @keyframes flashBackground {
-    0% { background-color: #40E0D0; color: #000; } /* Turkuaz arka plan ve siyah metin */
-    25% { background-color: #000; color: #40E0D0; } /* Siyah arka plan ve turkuaz metin */
-    50% { background-color: #40E0D0; color: #000; } /* Turkuaz arka plan ve siyah metin */
-    75% { background-color: #000; color: #40E0D0; } /* Siyah arka plan ve turkuaz metin */
-    100% { background-color: #40E0D0; color: #000; } /* Turkuaz arka plan ve siyah metin */
+    0% { 
+        background-color: #8000808c; 
+        color: #fff; 
+        box-shadow: 0 0 30px 10px #800080; /* Daha büyük ve yaygın gölge */
+    }  
+    50% { 
+        background-color: #8000808c; 
+        color: #fff; 
+        box-shadow: 0 0 40px 20px #80008080; /* Gölge yayılmaya devam eder ve şeffaflık artar */
+    }  
+    100% { 
+        background-color: #000; 
+        color: rgb(200, 200, 200); 
+        box-shadow: 0 0 0 0 #000; /* Gölge kaybolur */
+    }  
 }
+
