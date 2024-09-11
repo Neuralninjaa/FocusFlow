@@ -26,8 +26,8 @@ body {
     padding-left: 2vh;
     word-spacing: -12px;
     border-radius: 200px;
-    transition: all 2s ease-in-out;
-    /* background: radial-gradient(ellipse closest-side, rgb(200, 200, 200), gray,black);  */
+    
+    background: none; /* Arka planı temizle */
 }
 
 .container {
@@ -377,20 +377,30 @@ body {
     }
 }
 
+/* Overlay Ayarları */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(ellipse closest-side, rgb(83, 172, 138), black);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1; /* Overlay'in z-index değerini artır */
+}
+
 .timer.flash {
-    animation: flashBackground 5s forwards; /* Animasyon süresi 5 saniye, bir kez çalışır ve son durumu korur */
+    animation: flashBackground 1s forwards;
 }
 
 @keyframes flashBackground {  
     0% {   
-      background: radial-gradient(ellipse 55% 55%, rgb(83, 172, 138), black); /* İlk başta %60 genişlik ve yükseklik */
-      color: rgb(200, 200, 200);
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background: radial-gradient(ellipse 53% 53%, rgb(83, 172, 138), black);
+        color: rgb(200, 200, 200);
     }
-  
     100% { 
-      background: radial-gradient(ellipse 100% 100%, black, black); /* %150 genişlik ve yükseklik */
-      color: rgb(200, 200, 200);
+        background: radial-gradient(ellipse 100% 100%, black, black);
+        color: rgb(200, 200, 200);
     }  
-  }
-
+}
