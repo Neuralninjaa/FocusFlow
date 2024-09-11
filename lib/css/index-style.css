@@ -2,7 +2,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: "SUSE", sans-serif ;
+    font-family: "SUSE", sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -22,18 +22,20 @@ body {
     font-size: 20rem;
     color: rgb(200, 200, 200);
     letter-spacing: 0.08em;
-    text-align: center; 
+    text-align: center;
     padding-left: 2vh;
     word-spacing: -12px;
+    border-radius: 200px;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .container {
-    max-width: 800px; /* Container genişliğini artırdım */
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Ekran ortasında yatayda hizala */
+    align-items: center;
 }
 
 .timer-container {
@@ -46,48 +48,44 @@ body {
     position: relative;
 }
 
-.set-settings{
+.set-settings {
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: gray;
     border-radius: 45px;
-    padding: -5px 0px -5px 0px;
+    padding: 0;
     margin-left: 6vh;
 }
 
-/* input*/
 /* Dakika girilen input alanı */
 #minutesInput {
-    width: 150px; /* Genişlik */
-    height: 50px; /* Yükseklik */
-    font-size: 18px; /* Yazı tipi boyutu */
-    padding: 10px; /* İçerik ile kenarlar arasındaki boşluk */
-    border-radius: 45px; /* Kenarların yuvarlatılması */
-    background-color: gray; /* Arka plan rengi */
-    color:black; /* Yazı rengi */   
-    border: gray; 
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 45px;
+    background-color: gray;
+    color: black;
+    border: none;
     text-align: center;
 }
 
 #minutesInput::placeholder {
-    color: rgb(54, 54, 54); /* Placeholder yazısının rengi */
-    text-align: center;
+    color: rgb(54, 54, 54);
 }
-
 
 /* Butonlar */
 .buttons {
     display: flex;
     justify-content: center;
-    align-items: center; /* Dikeyde ortala */
-    gap: 10px; /* Butonlar arasına boşluk ekler */
+    align-items: center;
+    gap: 10px;
 }
 
-
 .time-button, .start-button, .stop-button, .reset-button, .set-time-button {
-    padding: 1.5em 3em; /* Buton padding'ini artır */
-    font-size: 14px; /* Buton yazı boyutunu artır */
+    padding: 1.5em 3em;
+    font-size: 14px;
     letter-spacing: 2px;
     font-weight: 500;
     color: #000;
@@ -101,16 +99,22 @@ body {
     margin: 8px;
 }
 
-.set-time-button{
+.set-time-button {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
-.reset-button{
+.set-time-button:hover {
+    transform: scale(1.08);
+    background-color: orange;
+    color: white;
+}
+
+.reset-button {
     text-transform: uppercase;
 }
 
 .time-button:hover, .start-button:hover, .stop-button:hover, .reset-button:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
 }
 
 .time-button:hover {
@@ -160,19 +164,19 @@ body {
 
 .exit-fullscreen-button {
     right: 20px;
-    display: none; /* Başlangıçta gizli */
+    display: none;
 }
 
 /* Tam Ekran Modu Ayarları */
 .fullscreen-mode .logo {
-    display: none; /* Tam ekran modunda logo gizli */
+    display: none;
 }
 
 .fullscreen-mode .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Tam ekran yüksekliği */
+    height: 100vh;
     flex-direction: column;
 }
 
@@ -181,40 +185,40 @@ body {
 }
 
 .fullscreen-mode .controls, .fullscreen-mode .buttons, .fullscreen-mode .exit-fullscreen-button {
-    opacity: 0; /* Butonları başlangıçta gizli yap */
+    opacity: 0;
     transition: opacity 1s ease;
 }
 
 .fullscreen-mode .controls.visible, .fullscreen-mode .buttons.visible, .fullscreen-mode .exit-fullscreen-button.visible {
-    opacity: 1; /* Görünür yap */
+    opacity: 1;
 }
 
 .fullscreen-mode .fullscreen-button {
-    display: none; /* Tam ekran modunda tam ekran butonunu gizle */
+    display: none;
 }
 
 .fullscreen-mode .exit-fullscreen-button {
-    display: block; /* Tam ekran modunda çıkış butonunu göster */
+    display: block;
     color: gray;
 }
 
 /* Responsive Medya Sorguları */
-/*   ##Cihaz = Masaüstü    */
+/* Masaüstü */
 @media (min-width: 1281px) {
     .logo {
         font-size: 5rem;
     }
-    
+
     .timer {
         font-size: 20rem;
     }
-    
+
     .container {
         max-width: 800px;
     }
 }
 
-/*  ##Cihaz = Laptoplar, Masaüstü    */
+/* Laptoplar ve Masaüstü */
 @media (min-width: 1025px) and (max-width: 1280px) {
     .logo {
         font-size: 4rem;
@@ -228,16 +232,16 @@ body {
         max-width: 700px;
     }
 
-    .set-settings{
+    .set-settings {
         margin-left: 1px;
     }
 
-    .time-button{
+    .time-button {
         margin: 0.5px;
     }
 }
 
-/*  ##Cihaz = Tabletler, Ipad (portrait/dikey modda)  */
+/* Tabletler ve iPad (dikey modda) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .logo {
         font-size: 3rem;
@@ -266,25 +270,21 @@ body {
         margin: 2vh;
     }
 
-    .set-settings{
+    .set-settings {
         height: 60%;
         width: 30%;
         margin-left: 1px;
     }
 
-    .time-button{
-        margin: 0.5px;
-    }
-
     #minutesInput {
         width: 60%;
-        height: 70%; 
-        font-size: 12px; 
-        padding: 3px; 
-    }   
+        height: 70%;
+        font-size: 12px;
+        padding: 3px;
+    }
 }
 
-/*  ##Cihaz = Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Landscape / Yatay Modda)   */
+/* Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Yatay Modda) */
 @media (min-width: 481px) and (max-width: 767px) {
     .logo {
         font-size: 2.5rem;
@@ -314,25 +314,21 @@ body {
         margin: 2vh;
     }
 
-    .set-settings{
+    .set-settings {
         height: 50%;
         width: 20%;
         margin-left: 1px;
     }
 
-    .time-button{
-        margin: 0.5px;
-    }
-
     #minutesInput {
         width: 60%;
-        height: 70%; 
-        font-size: 12px; 
-        padding: 3px; 
-    }   
+        height: 70%;
+        font-size: 12px;
+        padding: 3px;
+    }
 }
 
-/*   ##Cihaz = En Çok Tercih Edilen Mobil Boyutlar (Portrait/Dikey Modda)  */
+/* En Çok Tercih Edilen Mobil Boyutlar (Dikey Modda) */
 @media (min-width: 320px) and (max-width: 480px) {
     .logo {
         font-size: 1.8rem;
@@ -366,21 +362,28 @@ body {
         margin: 2vh;
     }
 
-    .set-settings{
+    .set-settings {
         height: 50%;
         width: 20%;
         margin-left: 1px;
     }
 
-    .time-button{
-        margin: 0.5px;
-    }
-
     #minutesInput {
         width: 60%;
-        height: 70%; 
-        font-size: 12px; 
-        padding: 3px; 
-    }  
+        height: 70%;
+        font-size: 10px;
+        padding: 2px;
+    }
 }
 
+.timer.flash {
+    animation: flashBackground 3s; /* Animasyon süresi 3 saniye */
+}
+
+@keyframes flashBackground {
+    0% { background-color: #40E0D0; color: #000; } /* Turkuaz arka plan ve siyah metin */
+    25% { background-color: #000; color: #40E0D0; } /* Siyah arka plan ve turkuaz metin */
+    50% { background-color: #40E0D0; color: #000; } /* Turkuaz arka plan ve siyah metin */
+    75% { background-color: #000; color: #40E0D0; } /* Siyah arka plan ve turkuaz metin */
+    100% { background-color: #40E0D0; color: #000; } /* Turkuaz arka plan ve siyah metin */
+}
